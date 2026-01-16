@@ -131,6 +131,30 @@ export default function MintPage() {
   const [mintSignatures, setMintSignatures] = useState<string[]>([]);
   const [mintAddresses, setMintAddresses] = useState<string[]>([]);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showShippingModal, setShowShippingModal] = useState(false);
+  const [shippingDetails, setShippingDetails] = useState({
+    name: '',
+    email: '',
+    address: '',
+    city: '',
+    postalCode: '',
+    country: '',
+  });
+
+  const handleShippingSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setShowShippingModal(false);
+    await handleMintProcess();
+  };
+
+  const handleMintClick = () => {
+    if (!connected || !publicKey) {
+      handleConnectWallet();
+      return;
+    }
+    // Open shipping modal to collect address first
+    setShowShippingModal(true);
+  };
 
   const handleConnectWallet = () => {
     setVisible(true);
@@ -141,7 +165,7 @@ export default function MintPage() {
     setMinted(false);
   };
 
-  const handleMint = async () => {
+  const handleMintProcess = async () => {
     if (!connected || !publicKey) {
       handleConnectWallet();
       return;
@@ -157,6 +181,27 @@ export default function MintPage() {
     setMintSignatures([]);
 
     try {
+      // 1. Send shipping details to API
+      try {
+        await fetch('/api/shipping', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            ...shippingDetails,
+            wallet: publicKey.toString(),
+            nftId: selectedNFT.id,
+            quantity: quantity,
+          }),
+        });
+      } catch (err) {
+        console.error('Failed to save shipping details', err);
+        // We continue with minting even if shipping save fails, or you could block it.
+        // For now, we'll log it and proceed.
+      }
+
+      // 2. Mint NFT
       const result = await mintNFT({
         wallet: wallet.adapter,
         connection,
@@ -444,6 +489,105 @@ export default function MintPage() {
         </>
       )}
 
+      {/* Shipping Details Modal */}
+      {showShippingModal && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setShowShippingModal(false)}></div>
+          <div className="relative bg-white rounded-2xl p-6 w-full max-w-md shadow-2xl max-h-[90vh] overflow-y-auto">
+            <h3 className="text-xl font-bold text-slate-900 mb-4">Shipping Details</h3>
+            <p className="text-sm text-gray-600 mb-6">
+              Please provide your address for the physical delivery of the artwork.
+            </p>
+            <form onSubmit={handleShippingSubmit} className="space-y-4">
+              <div>
+                <label className="block text-xs font-semibold text-gray-700 mb-1">Full Name</label>
+                <input
+                  required
+                  type="text"
+                  className="w-full rounded-lg border border-gray-300 p-2.5 text-sm focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition-all"
+                  value={shippingDetails.name}
+                  onChange={(e) => setShippingDetails({ ...shippingDetails, name: e.target.value })}
+                  placeholder="John Doe"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-gray-700 mb-1">Email</label>
+                <input
+                  required
+                  type="email"
+                  className="w-full rounded-lg border border-gray-300 p-2.5 text-sm focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition-all"
+                  value={shippingDetails.email}
+                  onChange={(e) => setShippingDetails({ ...shippingDetails, email: e.target.value })}
+                  placeholder="john@example.com"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-gray-700 mb-1">Address</label>
+                <input
+                  required
+                  type="text"
+                  className="w-full rounded-lg border border-gray-300 p-2.5 text-sm focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition-all"
+                  value={shippingDetails.address}
+                  onChange={(e) => setShippingDetails({ ...shippingDetails, address: e.target.value })}
+                  placeholder="123 Art Street"
+                />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-semibold text-gray-700 mb-1">City</label>
+                  <input
+                    required
+                    type="text"
+                    className="w-full rounded-lg border border-gray-300 p-2.5 text-sm focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition-all"
+                    value={shippingDetails.city}
+                    onChange={(e) => setShippingDetails({ ...shippingDetails, city: e.target.value })}
+                    placeholder="New York"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-gray-700 mb-1">Postal Code</label>
+                  <input
+                    required
+                    type="text"
+                    className="w-full rounded-lg border border-gray-300 p-2.5 text-sm focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition-all"
+                    value={shippingDetails.postalCode}
+                    onChange={(e) => setShippingDetails({ ...shippingDetails, postalCode: e.target.value })}
+                    placeholder="10001"
+                  />
+                </div>
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-gray-700 mb-1">Country</label>
+                <input
+                  required
+                  type="text"
+                  className="w-full rounded-lg border border-gray-300 p-2.5 text-sm focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none transition-all"
+                  value={shippingDetails.country}
+                  onChange={(e) => setShippingDetails({ ...shippingDetails, country: e.target.value })}
+                  placeholder="United States"
+                />
+              </div>
+
+              <div className="pt-4 flex space-x-3">
+                <button
+                  type="button"
+                  onClick={() => setShowShippingModal(false)}
+                  className="flex-1 py-3 px-4 rounded-lg border border-gray-300 text-gray-700 font-semibold text-sm hover:bg-gray-50 transition-all"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="flex-1 py-3 px-4 rounded-lg bg-slate-900 text-white font-semibold text-sm hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl"
+                >
+                  Confirm & Mint
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
       {/* Main Content */}
       <main className="pt-12 md:pt-20 pb-4 md:pb-12 relative z-10">
         <div className="max-w-[1400px] mx-auto px-3 sm:px-6 lg:px-8">
@@ -704,7 +848,7 @@ export default function MintPage() {
 
               {/* Mint Button */}
               <button
-                onClick={handleMint}
+                onClick={handleMintClick}
                 disabled={isMinting || (minted && connected)}
                 className="w-full py-3 md:py-4 rounded-lg md:rounded-2xl font-bold text-sm md:text-lg text-white bg-slate-900 active:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all transform active:scale-[0.98] relative overflow-hidden group touch-manipulation min-h-[44px] md:min-h-[52px]"
               >
