@@ -1,8 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { useWallet } from '@solana/wallet-adapter-react';
+import { useWallet, useConnection } from '@solana/wallet-adapter-react';
 import { useWalletModal } from '@solana/wallet-adapter-react-ui';
+import { mintNFT } from '@/lib/mintNFT';
 
 interface NFT {
   id: string;
@@ -17,41 +18,101 @@ interface NFT {
 
 const nftCollection: NFT[] = [
   {
-    id: '1',
-    name: 'Tai-Chi Waves',
-    description: 'Vibrant abstract artwork with signature yin-yang pattern. My signature element is the arrangement of thick layers of strong colors in a ying-yang pattern.',
-    price: 0.1,
-    image: 'https://www.a-w.ch/images/artworks/centrifugal.jpg',
+    id: '0',
+    name: 'LP Centrifugal #0',
+    description: 'Vibrant abstract artwork from the LP Centrifugal NFT Collection. 30cm - Acrylic on LP - 2025. Highly energetic colors in dynamic circular motion.',
+    price: 3.09,
+    image: '/nfts/nft-0.jpg',
     rarity: 'common',
     supply: 342,
     maxSupply: 1000,
   },
   {
+    id: '1',
+    name: 'LP Centrifugal #1',
+    description: 'Vibrant abstract artwork from the LP Centrifugal NFT Collection. 30cm - Acrylic on LP - 2025. Highly energetic colors in dynamic circular motion.',
+    price: 3.09,
+    image: '/nfts/nft-1.jpg',
+    rarity: 'common',
+    supply: 298,
+    maxSupply: 1000,
+  },
+  {
     id: '2',
-    name: 'Centrifugal',
-    description: 'Highly energetic colors in dynamic circular motion. Acrylic on Canvas, 2022.',
-    price: 0.25,
-    image: 'https://www.a-w.ch/images/artworks/centrifugal.jpg',
+    name: 'LP Centrifugal #2',
+    description: 'Vibrant abstract artwork from the LP Centrifugal NFT Collection. 30cm - Acrylic on LP - 2025. Highly energetic colors in dynamic circular motion.',
+    price: 3.09,
+    image: '/nfts/nft-2.jpg',
+    rarity: 'common',
+    supply: 256,
+    maxSupply: 1000,
+  },
+  {
+    id: '3',
+    name: 'LP Centrifugal #3',
+    description: 'Vibrant abstract artwork from the LP Centrifugal NFT Collection. 30cm - Acrylic on LP - 2025. Highly energetic colors in dynamic circular motion.',
+    price: 3.09,
+    image: '/nfts/nft-3.jpg',
+    rarity: 'common',
+    supply: 189,
+    maxSupply: 1000,
+  },
+  {
+    id: '4',
+    name: 'LP Centrifugal #4',
+    description: 'Vibrant abstract artwork from the LP Centrifugal NFT Collection. 30cm - Acrylic on LP - 2025. Highly energetic colors in dynamic circular motion.',
+    price: 3.09,
+    image: '/nfts/nft-4.jpg',
     rarity: 'rare',
     supply: 120,
     maxSupply: 500,
   },
   {
-    id: '3',
-    name: 'Monumental Gravity',
-    description: 'Oversized artwork representing communication, exchange, equality and peace. Monumental Gravity artworks stand for communication, exchange, equality and peace.',
-    price: 0.5,
-    image: 'https://www.a-w.ch/images/artworks/monumental-gravity-schwanden.jpg',
+    id: '5',
+    name: 'LP Centrifugal #5',
+    description: 'Vibrant abstract artwork from the LP Centrifugal NFT Collection. 30cm - Acrylic on LP - 2025. Highly energetic colors in dynamic circular motion.',
+    price: 3.09,
+    image: '/nfts/nft-5.jpg',
+    rarity: 'rare',
+    supply: 98,
+    maxSupply: 500,
+  },
+  {
+    id: '6',
+    name: 'LP Centrifugal #6',
+    description: 'Vibrant abstract artwork from the LP Centrifugal NFT Collection. 30cm - Acrylic on LP - 2025. Highly energetic colors in dynamic circular motion.',
+    price: 3.09,
+    image: '/nfts/nft-6.jpg',
+    rarity: 'rare',
+    supply: 76,
+    maxSupply: 500,
+  },
+  {
+    id: '7',
+    name: 'LP Centrifugal #7',
+    description: 'Vibrant abstract artwork from the LP Centrifugal NFT Collection. 30cm - Acrylic on LP - 2025. Highly energetic colors in dynamic circular motion.',
+    price: 3.09,
+    image: '/nfts/nft-7.jpg',
     rarity: 'epic',
     supply: 45,
     maxSupply: 200,
   },
   {
-    id: '4',
-    name: 'ART MUSTANG',
-    description: 'The ART MUSTANG by ANTONIO WEHRLI combines the beauty and fascination of a 1965 Ford Mustang Fastback muscle car with uplifting, fascinating and highly energetic colorflow.',
-    price: 1.0,
-    image: 'https://www.a-w.ch/images/artworks/art-mustang-poster.jpg',
+    id: '8',
+    name: 'LP Centrifugal #8',
+    description: 'Vibrant abstract artwork from the LP Centrifugal NFT Collection. 30cm - Acrylic on LP - 2025. Highly energetic colors in dynamic circular motion.',
+    price: 3.09,
+    image: '/nfts/nft-8.jpg',
+    rarity: 'epic',
+    supply: 32,
+    maxSupply: 200,
+  },
+  {
+    id: '9',
+    name: 'LP Centrifugal #9',
+    description: 'Vibrant abstract artwork from the LP Centrifugal NFT Collection. 30cm - Acrylic on LP - 2025. Highly energetic colors in dynamic circular motion.',
+    price: 3.09,
+    image: '/nfts/nft-9.jpg',
     rarity: 'legendary',
     supply: 12,
     maxSupply: 50,
@@ -59,12 +120,16 @@ const nftCollection: NFT[] = [
 ];
 
 export default function MintPage() {
-  const { publicKey, connected, disconnect } = useWallet();
+  const { publicKey, connected, disconnect, wallet } = useWallet();
+  const { connection } = useConnection();
   const { setVisible } = useWalletModal();
   const [selectedNFT, setSelectedNFT] = useState<NFT>(nftCollection[0]);
   const [quantity, setQuantity] = useState(1);
   const [isMinting, setIsMinting] = useState(false);
   const [minted, setMinted] = useState(false);
+  const [mintError, setMintError] = useState<string | null>(null);
+  const [mintSignatures, setMintSignatures] = useState<string[]>([]);
+  const [mintAddresses, setMintAddresses] = useState<string[]>([]);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleConnectWallet = () => {
@@ -77,15 +142,42 @@ export default function MintPage() {
   };
 
   const handleMint = async () => {
-    if (!connected) {
+    if (!connected || !publicKey) {
       handleConnectWallet();
       return;
     }
+
+    if (!wallet?.adapter) {
+      setMintError('Wallet adapter not available');
+      return;
+    }
+
     setIsMinting(true);
-    // Simulate minting process - replace with actual Solana minting logic
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    setIsMinting(false);
-    setMinted(true);
+    setMintError(null);
+    setMintSignatures([]);
+
+    try {
+      const result = await mintNFT({
+        wallet: wallet.adapter,
+        connection,
+        nftId: selectedNFT.id,
+        nftName: selectedNFT.name,
+        nftDescription: selectedNFT.description,
+        nftImage: selectedNFT.image,
+        price: selectedNFT.price,
+        quantity,
+      });
+
+      setMintSignatures(result.signatures);
+      setMintAddresses(result.mintAddresses);
+      setMinted(true);
+    } catch (error: any) {
+      console.error('Minting error:', error);
+      setMintError(error.message || 'Failed to mint NFT. Please try again.');
+      setMinted(false);
+    } finally {
+      setIsMinting(false);
+    }
   };
 
   const formatAddress = (address: string) => {
@@ -354,83 +446,87 @@ export default function MintPage() {
 
       {/* Main Content */}
       <main className="pt-16 md:pt-20 pb-8 md:pb-12 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
           <div className="text-center mb-16 md:mb-20">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-slate-900 px-4">
-              Tai-Chi Waves Collection
+              LP Centrifugal NFT Collection
             </h1>
             <p className="text-sm md:text-base text-gray-700 max-w-2xl mx-auto px-4">
-              Own a piece of Antonio Wehrli&apos;s vibrant, energetic abstract art as a digital collectible
+              Own a piece of Antonio Wehrli&apos;s vibrant, energetic abstract art as a digital collectible. 30cm - Acrylic on LP - 2025
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
-            {/* Left Side - NFT Selector Gallery */}
-            <div className="space-y-6 md:space-y-8">
+            {/* Left Side - NFT Selector Slider and Selected NFT Details */}
+            <div className="w-full space-y-6 md:space-y-8">
               <div>
                 <h2 className="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-3">Choose Your NFT</h2>
                 <p className="text-xs md:text-sm text-gray-600">Select an artwork from the collection to mint</p>
               </div>
 
-              {/* NFT Gallery Grid */}
-              <div className="grid grid-cols-2 gap-4 md:gap-6">
-                {nftCollection.map((nft) => (
-                  <button
-                    key={nft.id}
-                    onClick={() => {
-                      setSelectedNFT(nft);
-                      setMinted(false);
-                    }}
-                    className={`relative aspect-square rounded-xl md:rounded-2xl overflow-hidden border-2 transition-all ${
-                      selectedNFT.id === nft.id
-                        ? 'border-slate-900 shadow-xl scale-105'
-                        : 'border-gray-200 hover:border-slate-400'
-                    } ${getRarityColor(nft.rarity)}`}
-                  >
-                    {/* Selected Indicator */}
-                    {selectedNFT.id === nft.id && (
-                      <div className="absolute top-2 right-2 z-10 w-6 h-6 rounded-full bg-slate-900 flex items-center justify-center">
-                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                    )}
-
-                    {/* Rarity Badge */}
-                    <div className={`absolute top-1.5 md:top-2 left-1.5 md:left-2 z-10 px-1.5 md:px-2 py-0.5 md:py-1 rounded-full text-[10px] md:text-xs font-semibold ${getRarityBadgeColor(nft.rarity)}`}>
-                      {nft.rarity.toUpperCase()}
-                    </div>
-
-                    {/* NFT Image */}
-                    <div className="absolute inset-0 bg-slate-200">
-                      <img
-                        src={nft.image}
-                        alt={nft.name}
-                        className="absolute inset-0 w-full h-full object-cover"
-                        onError={(e) => {
-                          // Fallback to gradient if image fails to load
-                          e.currentTarget.style.display = 'none';
+              {/* NFT Gallery Slider */}
+              <div className="relative">
+                <div className="overflow-x-auto scrollbar-hide pb-4 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-0 lg:px-0">
+                  <div className="flex gap-4 md:gap-6 min-w-max">
+                    {nftCollection.map((nft) => (
+                      <button
+                        key={nft.id}
+                        onClick={() => {
+                          setSelectedNFT(nft);
+                          setMinted(false);
                         }}
-                      />
-                      <div className="absolute inset-0 bg-black/20"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-white text-center p-2 md:p-4 bg-black/40 rounded-lg backdrop-blur-sm">
-                          <h3 className="font-bold text-xs md:text-sm mb-0.5 md:mb-1 drop-shadow-lg">{nft.name}</h3>
-                          <p className="text-[10px] md:text-xs opacity-90 drop-shadow-md">{nft.price} SOL</p>
-                        </div>
-                      </div>
-                    </div>
+                        className={`relative w-32 md:w-40 lg:w-44 aspect-square rounded-xl md:rounded-2xl overflow-hidden border-2 transition-all flex-shrink-0 ${
+                          selectedNFT.id === nft.id
+                            ? 'border-slate-900 shadow-xl scale-105'
+                            : 'border-gray-200 hover:border-slate-400'
+                        } ${getRarityColor(nft.rarity)}`}
+                      >
+                        {/* Selected Indicator */}
+                        {selectedNFT.id === nft.id && (
+                          <div className="absolute top-2 right-2 z-10 w-6 h-6 rounded-full bg-slate-900 flex items-center justify-center">
+                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                          </div>
+                        )}
 
-                    {/* Price Overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-black/60 backdrop-blur-sm p-1.5 md:p-2">
-                      <div className="flex items-center justify-between">
-                        <span className="text-white text-[10px] md:text-xs font-semibold">{nft.price} SOL</span>
-                        <span className="text-white/80 text-[10px] md:text-xs">{nft.supply}/{nft.maxSupply}</span>
-                      </div>
-                    </div>
-                  </button>
-                ))}
+                        {/* Rarity Badge */}
+                        <div className={`absolute top-1.5 md:top-2 left-1.5 md:left-2 z-10 px-1.5 md:px-2 py-0.5 md:py-1 rounded-full text-[10px] md:text-xs font-semibold ${getRarityBadgeColor(nft.rarity)}`}>
+                          {nft.rarity.toUpperCase()}
+                        </div>
+
+                        {/* NFT Image */}
+                        <div className="absolute inset-0 bg-slate-200">
+                          <img
+                            src={nft.image}
+                            alt={nft.name}
+                            className="absolute inset-0 w-full h-full object-cover"
+                            onError={(e) => {
+                              // Fallback to gradient if image fails to load
+                              e.currentTarget.style.display = 'none';
+                            }}
+                          />
+                          <div className="absolute inset-0 bg-black/20"></div>
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="text-white text-center p-2 md:p-4 bg-black/40 rounded-lg backdrop-blur-sm">
+                              <h3 className="font-bold text-xs md:text-sm mb-0.5 md:mb-1 drop-shadow-lg">{nft.name}</h3>
+                              <p className="text-[10px] md:text-xs opacity-90 drop-shadow-md">{nft.price} SOL</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Price Overlay */}
+                        <div className="absolute bottom-0 left-0 right-0 bg-black/60 backdrop-blur-sm p-1.5 md:p-2">
+                          <div className="flex items-center justify-between">
+                            <span className="text-white text-[10px] md:text-xs font-semibold">{nft.price} SOL</span>
+                            <span className="text-white/80 text-[10px] md:text-xs">{nft.supply}/{nft.maxSupply}</span>
+                          </div>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
 
               {/* Selected NFT Details */}
@@ -509,7 +605,7 @@ export default function MintPage() {
             </div>
 
             {/* Right Side - Minting Interface */}
-            <div className="space-y-6 md:space-y-8">
+            <div className="w-full space-y-6 md:space-y-8">
               {/* Wallet Connection Prompt */}
               {!connected && (
                 <div className="bg-slate-50 border border-slate-200 rounded-xl md:rounded-2xl p-5 md:p-6">
@@ -538,7 +634,7 @@ export default function MintPage() {
                   </div>
                 </div>
                 <div className="flex items-center justify-between text-xs">
-                  <span className="text-gray-500">≈ ${(selectedNFT.price * 150).toLocaleString()} USD</span>
+                  <span className="text-gray-500">≈ $450 USD</span>
                   <div className="flex items-center space-x-1 text-green-600">
                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -596,7 +692,7 @@ export default function MintPage() {
                   </span>
                 </div>
                 <div className="text-xs text-gray-600">
-                  ≈ ${((selectedNFT.price * quantity) * 150).toLocaleString()} USD
+                  ≈ ${(450 * quantity).toLocaleString()} USD
                 </div>
                 {quantity > 1 && (
                   <div className="text-[10px] text-gray-500 mt-2">
@@ -646,8 +742,25 @@ export default function MintPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
               </button>
 
+              {/* Error Message */}
+              {mintError && (
+                <div className="bg-red-50 border border-red-200 rounded-xl md:rounded-2xl p-5 md:p-6">
+                  <div className="flex items-start space-x-3 md:space-x-4">
+                    <div className="w-5 h-5 md:w-5 md:h-5 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-red-700 mb-2 text-sm">Minting Failed</p>
+                      <p className="text-xs text-gray-600">{mintError}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {/* Success Message */}
-              {minted && (
+              {minted && !mintError && (
                 <div className="bg-green-50 border border-green-200 rounded-xl md:rounded-2xl p-5 md:p-6">
                   <div className="flex items-start space-x-3 md:space-x-4">
                     <div className="w-5 h-5 md:w-5 md:h-5 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -655,9 +768,41 @@ export default function MintPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <div>
+                    <div className="flex-1">
                       <p className="font-semibold text-green-700 mb-2 text-sm">Congratulations!</p>
-                      <p className="text-xs text-gray-600">Your artwork has been minted successfully. Check your wallet to view your NFT.</p>
+                      <p className="text-xs text-gray-600 mb-3">Your artwork has been minted successfully. Check your wallet to view your NFT.</p>
+                      {mintAddresses.length > 0 && (
+                        <div className="mt-3 space-y-2">
+                          <p className="text-xs font-semibold text-gray-700">Minted NFT Addresses:</p>
+                          {mintAddresses.map((address, idx) => (
+                            <a
+                              key={idx}
+                              href={`https://solscan.io/token/${address}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-xs text-blue-600 hover:text-blue-800 block truncate"
+                            >
+                              NFT {idx + 1}: {address.slice(0, 8)}...{address.slice(-8)}
+                            </a>
+                          ))}
+                        </div>
+                      )}
+                      {mintSignatures.length > 0 && (
+                        <div className="mt-3 space-y-1">
+                          <p className="text-xs font-semibold text-gray-700">Transaction Signatures:</p>
+                          {mintSignatures.map((sig, idx) => (
+                            <a
+                              key={idx}
+                              href={`https://solscan.io/tx/${sig}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-xs text-blue-600 hover:text-blue-800 block truncate"
+                            >
+                              {sig.slice(0, 8)}...{sig.slice(-8)}
+                            </a>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -670,7 +815,7 @@ export default function MintPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <p className="text-xs text-gray-700">
-                    <strong className="text-slate-900">Note:</strong> This is a demo mint page. Connect your wallet to proceed with the actual minting process.
+                    <strong className="text-slate-900">Note:</strong> Each NFT costs 3.09 SOL (≈$450 USD). Make sure you have enough SOL in your wallet. Set the NEXT_PUBLIC_TREASURY_WALLET environment variable with your treasury wallet address.
                   </p>
                 </div>
               </div>
@@ -731,10 +876,10 @@ export default function MintPage() {
               </div>
               <div className="relative">
                 <div className="relative aspect-square rounded-2xl overflow-hidden border border-gray-200 shadow-lg">
-                  {/* Using actual Centrifugal image from the website */}
+                  {/* Antonio Wehrli at Studio at work - 2018 */}
                   <img
-                    src="https://www.a-w.ch/images/artworks/Centrifugal%2020220815%20-%2066cm%20-%20Acrylic%20on%20Canvas%20-%202022.jpg"
-                    alt="Antonio Wehrli - Centrifugal Artwork"
+                    src="/antonio-studio-2018.avif"
+                    alt="Antonio Wehrli at Studio at work - 2018"
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       // Fallback to gradient if image fails to load
@@ -743,8 +888,8 @@ export default function MintPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5 z-10">
-                    <p className="text-base md:text-lg font-bold text-white mb-1 drop-shadow-lg">Contemporary Art</p>
-                    <p className="text-xs md:text-sm text-white/90 drop-shadow-md">Vibrant • Energetic • Abstract</p>
+                    <p className="text-base md:text-lg font-bold text-white mb-1 drop-shadow-lg">The Artist at Work</p>
+                    <p className="text-xs md:text-sm text-white/90 drop-shadow-md">Studio • 2018 • Creative Process</p>
                   </div>
                 </div>
               </div>
