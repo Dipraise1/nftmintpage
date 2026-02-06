@@ -1,83 +1,73 @@
-# Antonio Wehrli - Mint Page
+# NFT Mint Site - Setup & Deployment Guide
 
-A vibrant, modern NFT minting page for Antonio Wehrli's digital art collection, built with Next.js 14, TypeScript, and Tailwind CSS.
+## 🚀 Getting Started
 
-## Features
+Your NFT mint site is structurally complete! Follow these steps to make it production-ready.
 
-- 🎨 Vibrant design matching Antonio Wehrli's artistic aesthetic
-- 🌊 Tai-Chi wave pattern visual elements
-- 💰 Minting interface with quantity selector
-- 📊 Collection statistics display
-- 📱 Fully responsive design
-- ⚡ Built with Next.js 14 App Router
+### 1. Environment Configuration
 
-## Getting Started
+Edit `.env.local` and add your keys:
 
-### Prerequisites
-
-- Node.js 18+ installed
-- npm or yarn package manager
-
-### Installation
-
-1. Install dependencies:
 ```bash
-npm install
+# Required
+NEXT_PUBLIC_TREASURY_WALLET=Your_Solana_Wallet_Address
+NEXT_PUBLIC_SOLANA_NETWORK=mainnet-beta (or devnet for testing)
+
+# Optional (but recommended for full functionality)
+PINATA_JWT=Your_Pinata_JWT_Token (Sign up at pinata.cloud)
+NEXT_PUBLIC_SUPABASE_URL=Your_Supabase_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY=Your_Supabase_Key
 ```
 
-2. Run the development server:
+### 2. Upload Metadata to IPFS
+
+This step is crucial for your NFTs to show up correctly in wallets (Phantom/Solflare) and marketplaces (Magic Eden/Tensor).
+
+1. Get your API keys from [Pinata](https://app.pinata.cloud/developers/api-keys).
+2. Run the upload script:
+
 ```bash
-npm run dev
+npx tsx scripts/prepare-metadata.ts
 ```
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+This script will:
 
-## Project Structure
+- Upload all images from `public/nfts` to IPFS.
+- Generate metadata JSONs and upload them to IPFS.
+- Create `lib/metadata-uris.ts` with the new links.
 
-```
-mintproject/
-├── app/
-│   ├── globals.css       # Global styles and Tailwind imports
-│   ├── layout.tsx        # Root layout component
-│   └── page.tsx          # Main mint page
-├── package.json          # Dependencies and scripts
-├── tailwind.config.ts    # Tailwind configuration
-├── tsconfig.json         # TypeScript configuration
-└── next.config.mjs       # Next.js configuration
-```
+### 3. Database Setup (Optional but Recommended)
 
-## Customization
+If you want to track shipping details for physical delivery:
 
-### Colors
+1. Create a project at [Supabase](https://supabase.com).
+2. Go to the SQL Editor.
+3. Copy/paste the contents of `lib/db/schema.sql` and run it.
+4. Add your Supabase URL/Keys to `.env.local`.
 
-The color scheme can be customized in `tailwind.config.ts`. The current design uses:
-- Pink (#ff6b6b) - Primary color
-- Blue (#0ea5e9) - Accent color
-- Purple - Gradient combinations
+### 4. Testing
 
-### Minting Logic
+1. Ensure you are on `devnet` (in `.env.local`).
+2. Run the app: `npm run dev`.
+3. Connect a Phantom wallet (set to Devnet).
+4. Get some devnet SOL from [faucet.solana.com](https://faucet.solana.com).
+5. Try minting an NFT!
 
-The minting functionality in `app/page.tsx` is currently a demo. To integrate with a real blockchain:
+### 5. Deployment
 
-1. Install Web3 libraries (e.g., `ethers.js` or `viem`)
-2. Add wallet connection (e.g., MetaMask, WalletConnect)
-3. Implement smart contract interaction
-4. Add transaction handling and error management
+When ready for mainnet:
 
-## Technologies Used
+1. Change `NEXT_PUBLIC_SOLANA_NETWORK` to `mainnet-beta` in `.env.local`.
+2. Deploy to Vercel:
+   ```bash
+   npx vercel deploy
+   ```
+3. Add your environment variables in the Vercel dashboard.
 
-- **Next.js 14** - React framework with App Router
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Utility-first CSS framework
-- **React 18** - UI library
+## 🛠 Features Implemented
 
-## License
-
-This project is created for Antonio Wehrli's art collection.
-
-## Links
-
-- [Antonio Wehrli Website](https://www.a-w.ch/)
-- [Instagram](https://www.instagram.com/wehrliantonio/)
-- [LinkedIn](https://www.linkedin.com/in/antoniowehrli/)
-# nftmintpage
+- **Minting Engine**: Metaplex UMI integration for standard SPL NFTs.
+- **Physical Redemption**: Shipping form with database storage.
+- **Real-time Pricing**: Fetches live SOL/USD price.
+- **Toast Notifications**: beautiful success/error feedback.
+- **Transaction Tracking**: Links to Solscan for verification.

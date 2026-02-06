@@ -1,0 +1,550 @@
+{
+  "collection": {
+    "name": "LP Centrifugal NFT Collection",
+    "family": "Antonio Wehrli",
+    "description": "Vibrant abstract artworks from the LP Centrifugal NFT Collection. 30cm - Acrylic on LP - 2025.",
+    "symbol": "LP-CENT"
+  },
+  "nfts": [
+    {
+      "id": "0",
+      "name": "LP Centrifugal #0",
+      "symbol": "LP-CENT",
+      "description": "Vibrant abstract artwork from the LP Centrifugal NFT Collection. 30cm - Acrylic on LP - 2025. Highly energetic colors in dynamic circular motion.",
+      "image": "/nfts/nft-0.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        {
+          "trait_type": "Artist",
+          "value": "Antonio Wehrli"
+        },
+        {
+          "trait_type": "Collection",
+          "value": "LP Centrifugal"
+        },
+        {
+          "trait_type": "Year",
+          "value": "2025"
+        },
+        {
+          "trait_type": "Medium",
+          "value": "Acrylic on LP"
+        },
+        {
+          "trait_type": "Size",
+          "value": "30cm"
+        },
+        {
+          "trait_type": "Rarity",
+          "value": "Common"
+        },
+        {
+          "trait_type": "Number",
+          "value": "0"
+        }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [
+          {
+            "uri": "/nfts/nft-0.jpg",
+            "type": "image/jpeg"
+          }
+        ]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        {
+          "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G",
+          "share": 100
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "name": "LP Centrifugal #1",
+      "symbol": "LP-CENT",
+      "description": "Vibrant abstract artwork from the LP Centrifugal NFT Collection. 30cm - Acrylic on LP - 2025. Highly energetic colors in dynamic circular motion.",
+      "image": "/nfts/nft-1.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        {
+          "trait_type": "Artist",
+          "value": "Antonio Wehrli"
+        },
+        {
+          "trait_type": "Collection",
+          "value": "LP Centrifugal"
+        },
+        {
+          "trait_type": "Year",
+          "value": "2025"
+        },
+        {
+          "trait_type": "Medium",
+          "value": "Acrylic on LP"
+        },
+        {
+          "trait_type": "Size",
+          "value": "30cm"
+        },
+        {
+          "trait_type": "Rarity",
+          "value": "Common"
+        },
+        {
+          "trait_type": "Number",
+          "value": "1"
+        }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [
+          {
+            "uri": "/nfts/nft-1.jpg",
+            "type": "image/jpeg"
+          }
+        ]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        {
+          "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G",
+          "share": 100
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "LP Centrifugal #2",
+      "symbol": "LP-CENT",
+      "description": "Vibrant abstract artwork from the LP Centrifugal NFT Collection. 30cm - Acrylic on LP - 2025. Highly energetic colors in dynamic circular motion.",
+      "image": "/nfts/nft-2.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        {
+          "trait_type": "Artist",
+          "value": "Antonio Wehrli"
+        },
+        {
+          "trait_type": "Collection",
+          "value": "LP Centrifugal"
+        },
+        {
+          "trait_type": "Year",
+          "value": "2025"
+        },
+        {
+          "trait_type": "Medium",
+          "value": "Acrylic on LP"
+        },
+        {
+          "trait_type": "Size",
+          "value": "30cm"
+        },
+        {
+          "trait_type": "Rarity",
+          "value": "Common"
+        },
+        {
+          "trait_type": "Number",
+          "value": "2"
+        }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [
+          {
+            "uri": "/nfts/nft-2.jpg",
+            "type": "image/jpeg"
+          }
+        ]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        {
+          "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G",
+          "share": 100
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "LP Centrifugal #3",
+      "symbol": "LP-CENT",
+      "description": "Vibrant abstract artwork from the LP Centrifugal NFT Collection. 30cm - Acrylic on LP - 2025. Highly energetic colors in dynamic circular motion.",
+      "image": "/nfts/nft-3.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        {
+          "trait_type": "Artist",
+          "value": "Antonio Wehrli"
+        },
+        {
+          "trait_type": "Collection",
+          "value": "LP Centrifugal"
+        },
+        {
+          "trait_type": "Year",
+          "value": "2025"
+        },
+        {
+          "trait_type": "Medium",
+          "value": "Acrylic on LP"
+        },
+        {
+          "trait_type": "Size",
+          "value": "30cm"
+        },
+        {
+          "trait_type": "Rarity",
+          "value": "Common"
+        },
+        {
+          "trait_type": "Number",
+          "value": "3"
+        }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [
+          {
+            "uri": "/nfts/nft-3.jpg",
+            "type": "image/jpeg"
+          }
+        ]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        {
+          "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G",
+          "share": 100
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "LP Centrifugal #4",
+      "symbol": "LP-CENT",
+      "description": "Vibrant abstract artwork from the LP Centrifugal NFT Collection. 30cm - Acrylic on LP - 2025. Highly energetic colors in dynamic circular motion.",
+      "image": "/nfts/nft-4.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        {
+          "trait_type": "Artist",
+          "value": "Antonio Wehrli"
+        },
+        {
+          "trait_type": "Collection",
+          "value": "LP Centrifugal"
+        },
+        {
+          "trait_type": "Year",
+          "value": "2025"
+        },
+        {
+          "trait_type": "Medium",
+          "value": "Acrylic on LP"
+        },
+        {
+          "trait_type": "Size",
+          "value": "30cm"
+        },
+        {
+          "trait_type": "Rarity",
+          "value": "Rare"
+        },
+        {
+          "trait_type": "Number",
+          "value": "4"
+        }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [
+          {
+            "uri": "/nfts/nft-4.jpg",
+            "type": "image/jpeg"
+          }
+        ]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        {
+          "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G",
+          "share": 100
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "LP Centrifugal #5",
+      "symbol": "LP-CENT",
+      "description": "Vibrant abstract artwork from the LP Centrifugal NFT Collection. 30cm - Acrylic on LP - 2025. Highly energetic colors in dynamic circular motion.",
+      "image": "/nfts/nft-5.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        {
+          "trait_type": "Artist",
+          "value": "Antonio Wehrli"
+        },
+        {
+          "trait_type": "Collection",
+          "value": "LP Centrifugal"
+        },
+        {
+          "trait_type": "Year",
+          "value": "2025"
+        },
+        {
+          "trait_type": "Medium",
+          "value": "Acrylic on LP"
+        },
+        {
+          "trait_type": "Size",
+          "value": "30cm"
+        },
+        {
+          "trait_type": "Rarity",
+          "value": "Rare"
+        },
+        {
+          "trait_type": "Number",
+          "value": "5"
+        }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [
+          {
+            "uri": "/nfts/nft-5.jpg",
+            "type": "image/jpeg"
+          }
+        ]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        {
+          "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G",
+          "share": 100
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "LP Centrifugal #6",
+      "symbol": "LP-CENT",
+      "description": "Vibrant abstract artwork from the LP Centrifugal NFT Collection. 30cm - Acrylic on LP - 2025. Highly energetic colors in dynamic circular motion.",
+      "image": "/nfts/nft-6.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        {
+          "trait_type": "Artist",
+          "value": "Antonio Wehrli"
+        },
+        {
+          "trait_type": "Collection",
+          "value": "LP Centrifugal"
+        },
+        {
+          "trait_type": "Year",
+          "value": "2025"
+        },
+        {
+          "trait_type": "Medium",
+          "value": "Acrylic on LP"
+        },
+        {
+          "trait_type": "Size",
+          "value": "30cm"
+        },
+        {
+          "trait_type": "Rarity",
+          "value": "Rare"
+        },
+        {
+          "trait_type": "Number",
+          "value": "6"
+        }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [
+          {
+            "uri": "/nfts/nft-6.jpg",
+            "type": "image/jpeg"
+          }
+        ]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        {
+          "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G",
+          "share": 100
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "LP Centrifugal #7",
+      "symbol": "LP-CENT",
+      "description": "Vibrant abstract artwork from the LP Centrifugal NFT Collection. 30cm - Acrylic on LP - 2025. Highly energetic colors in dynamic circular motion.",
+      "image": "/nfts/nft-7.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        {
+          "trait_type": "Artist",
+          "value": "Antonio Wehrli"
+        },
+        {
+          "trait_type": "Collection",
+          "value": "LP Centrifugal"
+        },
+        {
+          "trait_type": "Year",
+          "value": "2025"
+        },
+        {
+          "trait_type": "Medium",
+          "value": "Acrylic on LP"
+        },
+        {
+          "trait_type": "Size",
+          "value": "30cm"
+        },
+        {
+          "trait_type": "Rarity",
+          "value": "Epic"
+        },
+        {
+          "trait_type": "Number",
+          "value": "7"
+        }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [
+          {
+            "uri": "/nfts/nft-7.jpg",
+            "type": "image/jpeg"
+          }
+        ]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        {
+          "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G",
+          "share": 100
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "LP Centrifugal #8",
+      "symbol": "LP-CENT",
+      "description": "Vibrant abstract artwork from the LP Centrifugal NFT Collection. 30cm - Acrylic on LP - 2025. Highly energetic colors in dynamic circular motion.",
+      "image": "/nfts/nft-8.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        {
+          "trait_type": "Artist",
+          "value": "Antonio Wehrli"
+        },
+        {
+          "trait_type": "Collection",
+          "value": "LP Centrifugal"
+        },
+        {
+          "trait_type": "Year",
+          "value": "2025"
+        },
+        {
+          "trait_type": "Medium",
+          "value": "Acrylic on LP"
+        },
+        {
+          "trait_type": "Size",
+          "value": "30cm"
+        },
+        {
+          "trait_type": "Rarity",
+          "value": "Epic"
+        },
+        {
+          "trait_type": "Number",
+          "value": "8"
+        }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [
+          {
+            "uri": "/nfts/nft-8.jpg",
+            "type": "image/jpeg"
+          }
+        ]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        {
+          "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G",
+          "share": 100
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "LP Centrifugal #9",
+      "symbol": "LP-CENT",
+      "description": "Vibrant abstract artwork from the LP Centrifugal NFT Collection. 30cm - Acrylic on LP - 2025. Highly energetic colors in dynamic circular motion.",
+      "image": "/nfts/nft-9.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        {
+          "trait_type": "Artist",
+          "value": "Antonio Wehrli"
+        },
+        {
+          "trait_type": "Collection",
+          "value": "LP Centrifugal"
+        },
+        {
+          "trait_type": "Year",
+          "value": "2025"
+        },
+        {
+          "trait_type": "Medium",
+          "value": "Acrylic on LP"
+        },
+        {
+          "trait_type": "Size",
+          "value": "30cm"
+        },
+        {
+          "trait_type": "Rarity",
+          "value": "Legendary"
+        },
+        {
+          "trait_type": "Number",
+          "value": "9"
+        }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [
+          {
+            "uri": "/nfts/nft-9.jpg",
+            "type": "image/jpeg"
+          }
+        ]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        {
+          "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G",
+          "share": 100
+        }
+      ]
+    }
+  ]
+}

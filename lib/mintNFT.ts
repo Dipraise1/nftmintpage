@@ -31,6 +31,7 @@ export interface MintNFTParams {
   nftName: string;
   nftDescription: string;
   nftImage: string;
+  metadataUri: string; // IPFS URI for the JSON metadata
   price: number; // in SOL
   quantity: number;
 }
@@ -42,9 +43,10 @@ export async function mintNFT({
   nftName,
   nftDescription,
   nftImage,
+  metadataUri,
   price,
   quantity,
-}: MintNFTParams): Promise<{ mintAddresses: string[]; signatures: string[] }> {
+}: MintNFTParams): Promise<{ mintAddresses: string[]; signatures: string[]; paymentSignature: string }> {
   if (!wallet.publicKey || !wallet.sendTransaction) {
     throw new Error('Wallet not connected or does not support sending transactions');
   }
@@ -114,27 +116,21 @@ export async function mintNFT({
 
         // Create unique name for each NFT
         const uniqueName = quantity > 1
-          ? `${nftName} #${nftId}-${Date.now().toString().slice(-4)}-${i + 1}`
+          ? `${nftName} #${Date.now().toString().slice(-4)}-${i + 1}`
           : nftName;
-
-        // Create metadata URI (in production, upload to IPFS/Arweave)
-        const metadataUri = nftImage;
 
         // Create NFT (Mint Account + Metadata)
         // We use the user's wallet (in UMI context) as the update authority
         const result = await createNft(umi, {
           mint,
           name: uniqueName,
-          uri: metadataUri,
-          sellerFeeBasisPoints: percentAmount(0),
+          uri: metadataUri, // Use the provided IPFS metadata URI
+          sellerFeeBasisPoints: percentAmount(5), // 5% royalty
           symbol: 'LP-CENT',
           updateAuthority: fromWeb3JsPublicKey(wallet.publicKey),
         }).sendAndConfirm(umi);
 
         // Mint the token to the user
-        // Note: createNft in some versions creates the mint account and metadata,
-        // but the token supply is 0. We need mintV1 to actually mint 1 token
-        // to the user's wallet.
         await mintV1(umi, {
           mint: mint.publicKey,
           authority: umi.identity, // The user's wallet is the authority
@@ -147,16 +143,10 @@ export async function mintNFT({
 
         // Add signature from the mint operation
         if (result.signature) {
-          // UMI signatures are Uint8Array, need to convert if we want them in our list
-          // But our interface expects string. UMI signature can be deserialized.
-          // For now, we'll just log it or format it if needed, but we already have payment sig.
-          // Let's rely on payment signature for the main receipt.
+          // Store signatures if needed, typically we rely on payment sig for the main record
         }
       } catch (error: any) {
         console.error(`Error minting NFT ${i + 1}:`, error);
-        // We don't want to stop the loop if one fails after payment, 
-        // but in production we should refund or retry.
-        // For now, we throw to alert the user.
         throw new Error(`Failed to mint NFT ${i + 1}: ${error.message}`);
       }
     }
@@ -167,7 +157,8 @@ export async function mintNFT({
 
     return {
       mintAddresses,
-      signatures
+      signatures: signatures, // Contains payment signature
+      paymentSignature // Explicitly return for easier access
     };
   } catch (error: any) {
     console.error('Error in minting process:', error);

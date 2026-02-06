@@ -1,9 +1,14 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useWallet, useConnection } from '@solana/wallet-adapter-react';
 import { useWalletModal } from '@solana/wallet-adapter-react-ui';
 import { mintNFT } from '@/lib/mintNFT';
+import { showSuccess, showError, showLoading, dismissToast, showMintSuccess } from '@/lib/toast';
+import { getSolPrice, convertSolToUsd, formatUsd } from '@/lib/pricing';
+import { LoadingSpinner } from '@/components/LoadingSpinner';
+import { TransactionLink } from '@/components/TransactionLink';
+import { getMetadataForNFT } from '@/lib/metadata';
 
 interface NFT {
   id: string;
@@ -127,11 +132,12 @@ export default function MintPage() {
   const [quantity, setQuantity] = useState(1);
   const [isMinting, setIsMinting] = useState(false);
   const [minted, setMinted] = useState(false);
-  const [mintError, setMintError] = useState<string | null>(null);
-  const [mintSignatures, setMintSignatures] = useState<string[]>([]);
-  const [mintAddresses, setMintAddresses] = useState<string[]>([]);
+  const [mintResult, setMintResult] = useState<{ signature: string, addresses: string[] } | null>(null);
+  
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showShippingModal, setShowShippingModal] = useState(false);
+  const [solPrice, setSolPrice] = useState<number>(145);
+  
   const [shippingDetails, setShippingDetails] = useState({
     name: '',
     email: '',
@@ -140,6 +146,22 @@ export default function MintPage() {
     postalCode: '',
     country: '',
   });
+
+  // Fetch SOL price on mount
+  useEffect(() => {
+    const fetchPrice = async () => {
+      const price = await getSolPrice();
+      setSolPrice(price);
+    };
+    fetchPrice();
+    // Refresh price every minute
+    const interval = setInterval(fetchPrice, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const priceUsd = useMemo(() => {
+    return convertSolToUsd(selectedNFT.price, solPrice);
+  }, [selectedNFT.price, solPrice]);
 
   const handleShippingSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -163,6 +185,7 @@ export default function MintPage() {
   const handleDisconnect = () => {
     disconnect();
     setMinted(false);
+    setMintResult(null);
   };
 
   const handleMintProcess = async () => {
@@ -172,18 +195,20 @@ export default function MintPage() {
     }
 
     if (!wallet?.adapter) {
-      setMintError('Wallet adapter not available');
+      showError('Wallet adapter not available');
       return;
     }
 
     setIsMinting(true);
-    setMintError(null);
-    setMintSignatures([]);
+    setMinted(false);
+    setMintResult(null);
+    const toastId = showLoading('Minting your NFT...');
 
     try {
-      // 1. Send shipping details to API
+      // 1. Send shipping details to API (Create pending order)
+      let orderId = null;
       try {
-        await fetch('/api/shipping', {
+        const shippingRes = await fetch('/api/shipping', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -192,16 +217,25 @@ export default function MintPage() {
             ...shippingDetails,
             wallet: publicKey.toString(),
             nftId: selectedNFT.id,
+            nftName: selectedNFT.name,
             quantity: quantity,
+            priceSol: selectedNFT.price,
           }),
         });
+        const shippingData = await shippingRes.json();
+        if (shippingData.success) {
+          orderId = shippingData.orderId;
+        }
       } catch (err) {
         console.error('Failed to save shipping details', err);
-        // We continue with minting even if shipping save fails, or you could block it.
-        // For now, we'll log it and proceed.
+        // Continue but warn
       }
 
       // 2. Mint NFT
+      // Try to get the IPFS metadata URI if it has been generated/uploaded
+      const nftMetadata = getMetadataForNFT(selectedNFT.id);
+      const metadataUri = nftMetadata?.metadataUri || selectedNFT.image; 
+
       const result = await mintNFT({
         wallet: wallet.adapter,
         connection,
@@ -209,16 +243,30 @@ export default function MintPage() {
         nftName: selectedNFT.name,
         nftDescription: selectedNFT.description,
         nftImage: selectedNFT.image,
+        metadataUri: metadataUri, 
         price: selectedNFT.price,
         quantity,
       });
 
-      setMintSignatures(result.signatures);
-      setMintAddresses(result.mintAddresses);
+      dismissToast(toastId);
+      
+      const paymentSig = result.paymentSignature || result.signatures[0];
+      
+      showMintSuccess(paymentSig, result.mintAddresses[0]);
+      
       setMinted(true);
+      setMintResult({
+        signature: paymentSig,
+        addresses: result.mintAddresses
+      });
+
+      // 3. Update Order Status (optional - call another API endpoint)
+      // await updateOrderStatus(orderId, 'completed', result.mintAddresses);
+
     } catch (error: any) {
       console.error('Minting error:', error);
-      setMintError(error.message || 'Failed to mint NFT. Please try again.');
+      dismissToast(toastId);
+      showError(error.message || 'Failed to mint NFT. Please try again.');
       setMinted(false);
     } finally {
       setIsMinting(false);
@@ -578,9 +626,17 @@ export default function MintPage() {
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 py-3 px-4 rounded-lg bg-slate-900 text-white font-semibold text-sm hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl"
+                  disabled={isMinting}
+                  className="flex-1 py-3 px-4 rounded-lg bg-slate-900 text-white font-semibold text-sm hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl disabled:bg-slate-700 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
                 >
-                  Confirm & Mint
+                  {isMinting ? (
+                    <>
+                      <LoadingSpinner size="sm" className="border-t-white border-slate-600" />
+                      <span>Processing...</span>
+                    </>
+                  ) : (
+                    <span>Confirm & Mint</span>
+                  )}
                 </button>
               </div>
             </form>
@@ -777,7 +833,9 @@ export default function MintPage() {
                   </div>
                 </div>
                 <div className="flex items-center justify-between text-[10px] md:text-xs">
-                  <span className="text-gray-500">≈ $450 USD</span>
+                  <span className="text-gray-500">
+                    ≈ {formatUsd(priceUsd)} USD
+                  </span>
                   <div className="flex items-center space-x-1 text-green-600">
                     <svg className="w-2.5 h-2.5 md:w-3 md:h-3" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -789,7 +847,7 @@ export default function MintPage() {
                   <div className="mt-3 md:mt-4 pt-3 md:pt-4 border-t border-gray-200">
                     <div className="flex items-center space-x-2 text-[10px] md:text-xs">
                       <span className="text-gray-600">Premium NFT:</span>
-                      <span className="font-semibold text-slate-900">+{(selectedNFT.price - 0.1).toFixed(2)} SOL</span>
+                      <span className="font-semibold text-slate-900">+{(selectedNFT.price - 3.09).toFixed(2)} SOL</span>
                     </div>
                   </div>
                 )}
