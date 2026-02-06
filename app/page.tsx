@@ -133,6 +133,9 @@ export default function MintPage() {
   const [isMinting, setIsMinting] = useState(false);
   const [minted, setMinted] = useState(false);
   const [mintResult, setMintResult] = useState<{ signature: string, addresses: string[] } | null>(null);
+  const [mintError, setMintError] = useState<string | null>(null);
+  const [mintAddresses, setMintAddresses] = useState<string[]>([]);
+  const [mintSignatures, setMintSignatures] = useState<string[]>([]);
   
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showShippingModal, setShowShippingModal] = useState(false);
@@ -186,6 +189,9 @@ export default function MintPage() {
     disconnect();
     setMinted(false);
     setMintResult(null);
+    setMintError(null);
+    setMintAddresses([]);
+    setMintSignatures([]);
   };
 
   const handleMintProcess = async () => {
@@ -202,6 +208,9 @@ export default function MintPage() {
     setIsMinting(true);
     setMinted(false);
     setMintResult(null);
+    setMintError(null);
+    setMintAddresses([]);
+    setMintSignatures([]);
     const toastId = showLoading('Minting your NFT...');
 
     try {
@@ -255,6 +264,9 @@ export default function MintPage() {
       showMintSuccess(paymentSig, result.mintAddresses[0]);
       
       setMinted(true);
+      setMintAddresses(result.mintAddresses);
+      const sigs = result.signatures || [paymentSig];
+      setMintSignatures(sigs);
       setMintResult({
         signature: paymentSig,
         addresses: result.mintAddresses
@@ -267,6 +279,7 @@ export default function MintPage() {
       console.error('Minting error:', error);
       dismissToast(toastId);
       showError(error.message || 'Failed to mint NFT. Please try again.');
+      setMintError(error.message || 'Failed to mint NFT. Please try again.');
       setMinted(false);
     } finally {
       setIsMinting(false);
