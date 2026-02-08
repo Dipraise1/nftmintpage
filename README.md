@@ -9,8 +9,9 @@ Your NFT mint site is structurally complete! Follow these steps to make it produ
 Edit `.env.local` and add your keys:
 
 ```bash
-# Required
-NEXT_PUBLIC_TREASURY_WALLET=Your_Solana_Wallet_Address
+# Required - Wallet Configuration (90/10 primary sales split)
+NEXT_PUBLIC_OWNER_WALLET=8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G
+NEXT_PUBLIC_DEV_WALLET=BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX
 NEXT_PUBLIC_SOLANA_NETWORK=mainnet-beta (or devnet for testing)
 
 # Optional (but recommended for full functionality)
