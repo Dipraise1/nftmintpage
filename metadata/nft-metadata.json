@@ -56,7 +56,11 @@
       "creators": [
         {
           "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G",
-          "share": 100
+          "share": 80
+        },
+        {
+          "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX",
+          "share": 20
         }
       ]
     },
@@ -110,7 +114,11 @@
       "creators": [
         {
           "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G",
-          "share": 100
+          "share": 80
+        },
+        {
+          "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX",
+          "share": 20
         }
       ]
     },
@@ -164,7 +172,11 @@
       "creators": [
         {
           "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G",
-          "share": 100
+          "share": 80
+        },
+        {
+          "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX",
+          "share": 20
         }
       ]
     },
@@ -218,7 +230,11 @@
       "creators": [
         {
           "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G",
-          "share": 100
+          "share": 80
+        },
+        {
+          "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX",
+          "share": 20
         }
       ]
     },
@@ -272,7 +288,11 @@
       "creators": [
         {
           "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G",
-          "share": 100
+          "share": 80
+        },
+        {
+          "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX",
+          "share": 20
         }
       ]
     },
@@ -326,7 +346,11 @@
       "creators": [
         {
           "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G",
-          "share": 100
+          "share": 80
+        },
+        {
+          "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX",
+          "share": 20
         }
       ]
     },
@@ -380,7 +404,11 @@
       "creators": [
         {
           "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G",
-          "share": 100
+          "share": 80
+        },
+        {
+          "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX",
+          "share": 20
         }
       ]
     },
@@ -434,7 +462,11 @@
       "creators": [
         {
           "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G",
-          "share": 100
+          "share": 80
+        },
+        {
+          "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX",
+          "share": 20
         }
       ]
     },
@@ -488,7 +520,11 @@
       "creators": [
         {
           "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G",
-          "share": 100
+          "share": 80
+        },
+        {
+          "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX",
+          "share": 20
         }
       ]
     },
@@ -542,8 +578,792 @@
       "creators": [
         {
           "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G",
-          "share": 100
+          "share": 80
+        },
+        {
+          "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX",
+          "share": 20
         }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "LP Centrifugal #10",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 10 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-10.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Common" },
+        { "trait_type": "Number", "value": "10" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-10.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "11",
+      "name": "LP Centrifugal #11",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 11 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-11.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Common" },
+        { "trait_type": "Number", "value": "11" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-11.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "12",
+      "name": "LP Centrifugal #12",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 12 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-12.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Common" },
+        { "trait_type": "Number", "value": "12" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-12.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "13",
+      "name": "LP Centrifugal #13",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 13 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-13.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Common" },
+        { "trait_type": "Number", "value": "13" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-13.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "14",
+      "name": "LP Centrifugal #14",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 14 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-14.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Common" },
+        { "trait_type": "Number", "value": "14" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-14.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "15",
+      "name": "LP Centrifugal #15",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 15 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-15.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Common" },
+        { "trait_type": "Number", "value": "15" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-15.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "16",
+      "name": "LP Centrifugal #16",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 16 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-16.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Common" },
+        { "trait_type": "Number", "value": "16" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-16.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "17",
+      "name": "LP Centrifugal #17",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 17 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-17.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Common" },
+        { "trait_type": "Number", "value": "17" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-17.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "18",
+      "name": "LP Centrifugal #18",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 18 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-18.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Common" },
+        { "trait_type": "Number", "value": "18" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-18.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "19",
+      "name": "LP Centrifugal #19",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 19 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-19.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Common" },
+        { "trait_type": "Number", "value": "19" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-19.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "20",
+      "name": "LP Centrifugal #20",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 20 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-20.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Rare" },
+        { "trait_type": "Number", "value": "20" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-20.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "21",
+      "name": "LP Centrifugal #21",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 21 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-21.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Rare" },
+        { "trait_type": "Number", "value": "21" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-21.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "22",
+      "name": "LP Centrifugal #22",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 22 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-22.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Rare" },
+        { "trait_type": "Number", "value": "22" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-22.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "23",
+      "name": "LP Centrifugal #23",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 23 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-23.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Rare" },
+        { "trait_type": "Number", "value": "23" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-23.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "24",
+      "name": "LP Centrifugal #24",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 24 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-24.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Rare" },
+        { "trait_type": "Number", "value": "24" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-24.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "25",
+      "name": "LP Centrifugal #25",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 25 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-25.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Rare" },
+        { "trait_type": "Number", "value": "25" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-25.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "26",
+      "name": "LP Centrifugal #26",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 26 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-26.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Rare" },
+        { "trait_type": "Number", "value": "26" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-26.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "27",
+      "name": "LP Centrifugal #27",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 27 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-27.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Rare" },
+        { "trait_type": "Number", "value": "27" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-27.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "28",
+      "name": "LP Centrifugal #28",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 28 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-28.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Epic" },
+        { "trait_type": "Number", "value": "28" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-28.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "29",
+      "name": "LP Centrifugal #29",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 29 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-29.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Epic" },
+        { "trait_type": "Number", "value": "29" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-29.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "30",
+      "name": "LP Centrifugal #30",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 30 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-30.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Epic" },
+        { "trait_type": "Number", "value": "30" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-30.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "31",
+      "name": "LP Centrifugal #31",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 31 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-31.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Epic" },
+        { "trait_type": "Number", "value": "31" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-31.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "32",
+      "name": "LP Centrifugal #32",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 32 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-32.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Epic" },
+        { "trait_type": "Number", "value": "32" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-32.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "33",
+      "name": "LP Centrifugal #33",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 33 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-33.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Epic" },
+        { "trait_type": "Number", "value": "33" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-33.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "34",
+      "name": "LP Centrifugal #34",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 34 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-34.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Epic" },
+        { "trait_type": "Number", "value": "34" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-34.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "35",
+      "name": "LP Centrifugal #35",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 35 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-35.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Legendary" },
+        { "trait_type": "Number", "value": "35" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-35.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "36",
+      "name": "LP Centrifugal #36",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 36 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-36.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Legendary" },
+        { "trait_type": "Number", "value": "36" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-36.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "37",
+      "name": "LP Centrifugal #37",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 37 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-37.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Legendary" },
+        { "trait_type": "Number", "value": "37" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-37.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "38",
+      "name": "LP Centrifugal #38",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 38 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-38.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Legendary" },
+        { "trait_type": "Number", "value": "38" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-38.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
+      ]
+    },
+    {
+      "id": "39",
+      "name": "LP Centrifugal #39",
+      "symbol": "LP-CENT",
+      "description": "LP Centrifugal NFT Collection No. 39 - 30cm - Acrylic on LP - 2025.",
+      "image": "/nfts/nft-39.jpg",
+      "external_url": "https://www.a-w.ch",
+      "attributes": [
+        { "trait_type": "Artist", "value": "Antonio Wehrli" },
+        { "trait_type": "Collection", "value": "LP Centrifugal" },
+        { "trait_type": "Year", "value": "2025" },
+        { "trait_type": "Medium", "value": "Acrylic on LP" },
+        { "trait_type": "Size", "value": "30cm" },
+        { "trait_type": "Rarity", "value": "Legendary" },
+        { "trait_type": "Number", "value": "39" }
+      ],
+      "properties": {
+        "category": "image",
+        "files": [{ "uri": "/nfts/nft-39.jpg", "type": "image/jpeg" }]
+      },
+      "seller_fee_basis_points": 500,
+      "creators": [
+        { "address": "8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G", "share": 80 },
+        { "address": "BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX", "share": 20 }
       ]
     }
   ]
