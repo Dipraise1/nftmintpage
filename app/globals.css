@@ -98,3 +98,36 @@ body {
     scroll-behavior: smooth;
   }
 }
+
+/* Image protection - prevent downloading/copying NFT images */
+.nft-protected {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  pointer-events: none;
+  -webkit-touch-callout: none;
+}
+
+.nft-protected-wrapper {
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Invisible overlay to block direct image interaction */
+.nft-protected-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: transparent;
+}
