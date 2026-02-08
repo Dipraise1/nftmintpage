@@ -122,6 +122,306 @@ const nftCollection: NFT[] = [
     supply: 9,
     maxSupply: 10,
   },
+  {
+    id: '10',
+    name: 'LP Centrifugal #10',
+    description: 'LP Centrifugal NFT Collection No. 10 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-10.jpg',
+    rarity: 'common',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '11',
+    name: 'LP Centrifugal #11',
+    description: 'LP Centrifugal NFT Collection No. 11 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-11.jpg',
+    rarity: 'common',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '12',
+    name: 'LP Centrifugal #12',
+    description: 'LP Centrifugal NFT Collection No. 12 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-12.jpg',
+    rarity: 'common',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '13',
+    name: 'LP Centrifugal #13',
+    description: 'LP Centrifugal NFT Collection No. 13 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-13.jpg',
+    rarity: 'common',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '14',
+    name: 'LP Centrifugal #14',
+    description: 'LP Centrifugal NFT Collection No. 14 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-14.jpg',
+    rarity: 'common',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '15',
+    name: 'LP Centrifugal #15',
+    description: 'LP Centrifugal NFT Collection No. 15 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-15.jpg',
+    rarity: 'common',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '16',
+    name: 'LP Centrifugal #16',
+    description: 'LP Centrifugal NFT Collection No. 16 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-16.jpg',
+    rarity: 'common',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '17',
+    name: 'LP Centrifugal #17',
+    description: 'LP Centrifugal NFT Collection No. 17 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-17.jpg',
+    rarity: 'common',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '18',
+    name: 'LP Centrifugal #18',
+    description: 'LP Centrifugal NFT Collection No. 18 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-18.jpg',
+    rarity: 'common',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '19',
+    name: 'LP Centrifugal #19',
+    description: 'LP Centrifugal NFT Collection No. 19 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-19.jpg',
+    rarity: 'common',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '20',
+    name: 'LP Centrifugal #20',
+    description: 'LP Centrifugal NFT Collection No. 20 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-20.jpg',
+    rarity: 'rare',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '21',
+    name: 'LP Centrifugal #21',
+    description: 'LP Centrifugal NFT Collection No. 21 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-21.jpg',
+    rarity: 'rare',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '22',
+    name: 'LP Centrifugal #22',
+    description: 'LP Centrifugal NFT Collection No. 22 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-22.jpg',
+    rarity: 'rare',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '23',
+    name: 'LP Centrifugal #23',
+    description: 'LP Centrifugal NFT Collection No. 23 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-23.jpg',
+    rarity: 'rare',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '24',
+    name: 'LP Centrifugal #24',
+    description: 'LP Centrifugal NFT Collection No. 24 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-24.jpg',
+    rarity: 'rare',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '25',
+    name: 'LP Centrifugal #25',
+    description: 'LP Centrifugal NFT Collection No. 25 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-25.jpg',
+    rarity: 'rare',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '26',
+    name: 'LP Centrifugal #26',
+    description: 'LP Centrifugal NFT Collection No. 26 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-26.jpg',
+    rarity: 'rare',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '27',
+    name: 'LP Centrifugal #27',
+    description: 'LP Centrifugal NFT Collection No. 27 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-27.jpg',
+    rarity: 'rare',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '28',
+    name: 'LP Centrifugal #28',
+    description: 'LP Centrifugal NFT Collection No. 28 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-28.jpg',
+    rarity: 'epic',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '29',
+    name: 'LP Centrifugal #29',
+    description: 'LP Centrifugal NFT Collection No. 29 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-29.jpg',
+    rarity: 'epic',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '30',
+    name: 'LP Centrifugal #30',
+    description: 'LP Centrifugal NFT Collection No. 30 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-30.jpg',
+    rarity: 'epic',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '31',
+    name: 'LP Centrifugal #31',
+    description: 'LP Centrifugal NFT Collection No. 31 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-31.jpg',
+    rarity: 'epic',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '32',
+    name: 'LP Centrifugal #32',
+    description: 'LP Centrifugal NFT Collection No. 32 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-32.jpg',
+    rarity: 'epic',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '33',
+    name: 'LP Centrifugal #33',
+    description: 'LP Centrifugal NFT Collection No. 33 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-33.jpg',
+    rarity: 'epic',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '34',
+    name: 'LP Centrifugal #34',
+    description: 'LP Centrifugal NFT Collection No. 34 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-34.jpg',
+    rarity: 'epic',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '35',
+    name: 'LP Centrifugal #35',
+    description: 'LP Centrifugal NFT Collection No. 35 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-35.jpg',
+    rarity: 'legendary',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '36',
+    name: 'LP Centrifugal #36',
+    description: 'LP Centrifugal NFT Collection No. 36 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-36.jpg',
+    rarity: 'legendary',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '37',
+    name: 'LP Centrifugal #37',
+    description: 'LP Centrifugal NFT Collection No. 37 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-37.jpg',
+    rarity: 'legendary',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '38',
+    name: 'LP Centrifugal #38',
+    description: 'LP Centrifugal NFT Collection No. 38 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-38.jpg',
+    rarity: 'legendary',
+    supply: 0,
+    maxSupply: 10,
+  },
+  {
+    id: '39',
+    name: 'LP Centrifugal #39',
+    description: 'LP Centrifugal NFT Collection No. 39 - 30cm - Acrylic on LP - 2025.',
+    price: 3.09,
+    image: '/nfts/nft-39.jpg',
+    rarity: 'legendary',
+    supply: 0,
+    maxSupply: 10,
+  },
 ];
 
 export default function MintPage() {
@@ -160,6 +460,42 @@ export default function MintPage() {
     // Refresh price every minute
     const interval = setInterval(fetchPrice, 60000);
     return () => clearInterval(interval);
+  }, []);
+
+  // Image protection: block keyboard shortcuts for saving/inspecting
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Block Ctrl+S (save), Ctrl+U (view source), Ctrl+Shift+I (dev tools), F12
+      if (
+        (e.ctrlKey && e.key === 's') ||
+        (e.ctrlKey && e.key === 'u') ||
+        (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+        (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+        (e.ctrlKey && e.shiftKey && e.key === 'C') ||
+        e.key === 'F12'
+      ) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    };
+
+    const handleContextMenu = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      // Block right-click on images and their wrappers
+      if (
+        target.tagName === 'IMG' ||
+        target.closest('.nft-protected-wrapper')
+      ) {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('contextmenu', handleContextMenu);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('contextmenu', handleContextMenu);
+    };
   }, []);
 
   const priceUsd = useMemo(() => {
@@ -709,11 +1045,14 @@ export default function MintPage() {
                         </div>
 
                         {/* NFT Image */}
-                        <div className="absolute inset-0 bg-slate-200">
+                        <div className="absolute inset-0 bg-slate-200 nft-protected-wrapper">
                           <img
                             src={nft.image}
                             alt={nft.name}
-                            className="absolute inset-0 w-full h-full object-cover"
+                            className="absolute inset-0 w-full h-full object-cover nft-protected"
+                            draggable={false}
+                            onContextMenu={(e) => e.preventDefault()}
+                            onDragStart={(e) => e.preventDefault()}
                             onError={(e) => {
                               // Fallback to gradient if image fails to load
                               e.currentTarget.style.display = 'none';
@@ -744,11 +1083,14 @@ export default function MintPage() {
               {/* Selected NFT Details */}
               <div className="bg-white rounded-lg md:rounded-2xl p-2 md:p-7 border border-gray-200 shadow-lg w-full overflow-hidden">
                 {/* Large Preview Image */}
-                <div className="relative w-full max-w-[280px] md:max-w-full mx-auto rounded-lg md:rounded-xl overflow-hidden mb-4 md:mb-6 border border-gray-200 aspect-square">
+                <div className="relative w-full max-w-[280px] md:max-w-full mx-auto rounded-lg md:rounded-xl overflow-hidden mb-4 md:mb-6 border border-gray-200 aspect-square nft-protected-wrapper" onContextMenu={(e) => e.preventDefault()}>
                   <img
                     src={selectedNFT.image}
                     alt={selectedNFT.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover nft-protected"
+                    draggable={false}
+                    onContextMenu={(e) => e.preventDefault()}
+                    onDragStart={(e) => e.preventDefault()}
                     onError={(e) => {
                       // Fallback to gradient if image fails to load
                       e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"%3E%3Cdefs%3E%3ClinearGradient id="grad" x1="0%25" y1="0%25" x2="100%25" y2="100%25"%3E%3Cstop offset="0%25" style="stop-color:%2364758b;stop-opacity:1" /%3E%3Cstop offset="50%25" style="stop-color:%23475569;stop-opacity:1" /%3E%3Cstop offset="100%25" style="stop-color:%23334155;stop-opacity:1" /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width="400" height="400" fill="url(%23grad)"/%3E%3C/svg%3E';
@@ -1031,7 +1373,7 @@ export default function MintPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <p className="text-[10px] md:text-xs text-gray-700 leading-relaxed min-w-0 flex-1 break-words">
-                    <strong className="text-slate-900">Note:</strong> Each NFT costs 3.09 SOL (≈$450 USD). Make sure you have enough SOL in your wallet. Set the NEXT_PUBLIC_TREASURY_WALLET environment variable with your treasury wallet address.
+                    <strong className="text-slate-900">Note:</strong> Each NFT costs 3.09 SOL (≈$450 USD). Make sure you have enough SOL in your wallet. Payments are split 90% to the artist and 10% to the developer.
                   </p>
                 </div>
               </div>
@@ -1047,7 +1389,10 @@ export default function MintPage() {
                   <img
                     src="https://www.a-w.ch/Logo.jpg"
                     alt="Antonio Wehrli Logo"
-                    className="h-auto w-auto max-w-[140px] md:max-w-[160px]"
+                    className="h-auto w-auto max-w-[140px] md:max-w-[160px] nft-protected"
+                    draggable={false}
+                    onContextMenu={(e) => e.preventDefault()}
+                    onDragStart={(e) => e.preventDefault()}
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
                     }}
@@ -1091,12 +1436,15 @@ export default function MintPage() {
                 </div>
               </div>
               <div className="relative">
-                <div className="relative aspect-square rounded-2xl overflow-hidden border border-gray-200 shadow-lg">
+                <div className="relative aspect-square rounded-2xl overflow-hidden border border-gray-200 shadow-lg nft-protected-wrapper" onContextMenu={(e) => e.preventDefault()}>
                   {/* Antonio Wehrli at Studio at work - 2018 */}
                   <img
                     src="/antonio-studio-2018.avif"
                     alt="Antonio Wehrli at Studio at work - 2018"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover nft-protected"
+                    draggable={false}
+                    onContextMenu={(e) => e.preventDefault()}
+                    onDragStart={(e) => e.preventDefault()}
                     onError={(e) => {
                       // Fallback to gradient if image fails to load
                       e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"%3E%3Cdefs%3E%3ClinearGradient id="grad" x1="0%25" y1="0%25" x2="100%25" y2="100%25"%3E%3Cstop offset="0%25" style="stop-color:%2364758b;stop-opacity:1" /%3E%3Cstop offset="50%25" style="stop-color:%23475569;stop-opacity:1" /%3E%3Cstop offset="100%25" style="stop-color:%23334155;stop-opacity:1" /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width="400" height="400" fill="url(%23grad)"/%3E%3C/svg%3E';
