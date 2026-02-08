@@ -21,8 +21,15 @@ import {
 import { fromWeb3JsPublicKey } from '@metaplex-foundation/umi-web3js-adapters';
 import { walletAdapterIdentity } from '@metaplex-foundation/umi-signer-wallet-adapters';
 
-// Treasury wallet address
-const TREASURY_WALLET = process.env.NEXT_PUBLIC_TREASURY_WALLET || '8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G';
+// Owner wallet (Artist) - receives 90% of primary sales, 4% of secondary royalties
+const OWNER_WALLET = process.env.NEXT_PUBLIC_OWNER_WALLET || '8WWyVqqsGFAveZVjBrS5vUSBb1LmsdsoLvEZq6bMUT7G';
+
+// Dev wallet - receives 10% of primary sales, 1% of secondary royalties
+const DEV_WALLET = process.env.NEXT_PUBLIC_DEV_WALLET || 'BEkmWcDkUWnpRorpG9W1X7G9FcyPQrRFah8eksRWTrX';
+
+// Revenue split percentages
+const OWNER_SHARE_PERCENT = 90;
+const DEV_SHARE_PERCENT = 10;
 
 export interface MintNFTParams {
   wallet: WalletAdapter;
@@ -51,33 +58,38 @@ export async function mintNFT({
     throw new Error('Wallet not connected or does not support sending transactions');
   }
 
-  if (TREASURY_WALLET === 'YOUR_TREASURY_WALLET_ADDRESS_HERE') {
-    throw new Error('Please set NEXT_PUBLIC_TREASURY_WALLET environment variable with your treasury wallet address');
-  }
-
   const signatures: string[] = [];
   const mintAddresses: string[] = [];
 
   try {
-    const treasuryPubkey = new PublicKey(TREASURY_WALLET);
+    const ownerPubkey = new PublicKey(OWNER_WALLET);
+    const devPubkey = new PublicKey(DEV_WALLET);
     const totalPriceLamports = Math.round(price * LAMPORTS_PER_SOL * quantity);
 
-    // Step 1: Transfer payment to treasury
-    // Note: We are doing this as a separate transaction for now because mixing
-    // web3.js transactions (transfer) and UMI transactions (minting) can be complex manually.
-    // Ideally, we'd use UMI for everything, but for quick integration with existing setup:
+    // Calculate the split: 90% to owner, 10% to dev
+    const ownerAmount = Math.floor(totalPriceLamports * OWNER_SHARE_PERCENT / 100);
+    const devAmount = totalPriceLamports - ownerAmount; // Remainder to dev to avoid rounding issues
 
-    // Check balance first
+    // Check balance first (include buffer for transaction fees)
     const balance = await connection.getBalance(wallet.publicKey);
-    if (balance < totalPriceLamports) {
-      throw new Error(`Insufficient SOL balance. Needed: ${price * quantity} SOL`);
+    const estimatedFees = 10000; // ~0.00001 SOL buffer for tx fees
+    if (balance < totalPriceLamports + estimatedFees) {
+      throw new Error(`Insufficient SOL balance. Needed: ${price * quantity} SOL plus fees`);
     }
 
+    // Create transaction with both transfers in a single atomic transaction
     const transferTransaction = new Transaction().add(
+      // Transfer 90% to Owner wallet
       SystemProgram.transfer({
         fromPubkey: wallet.publicKey,
-        toPubkey: treasuryPubkey,
-        lamports: totalPriceLamports,
+        toPubkey: ownerPubkey,
+        lamports: ownerAmount,
+      }),
+      // Transfer 10% to Dev wallet
+      SystemProgram.transfer({
+        fromPubkey: wallet.publicKey,
+        toPubkey: devPubkey,
+        lamports: devAmount,
       })
     );
 
@@ -87,7 +99,10 @@ export async function mintNFT({
     transferTransaction.feePayer = wallet.publicKey;
 
     // Send payment transaction
-    console.log('Sending payment to treasury...');
+    console.log('Sending payment...');
+    console.log(`  Owner (90%): ${ownerAmount / LAMPORTS_PER_SOL} SOL`);
+    console.log(`  Dev (10%): ${devAmount / LAMPORTS_PER_SOL} SOL`);
+    
     const paymentSignature = await wallet.sendTransaction(transferTransaction, connection);
 
     // Wait for confirmation
@@ -120,31 +135,40 @@ export async function mintNFT({
           : nftName;
 
         // Create NFT (Mint Account + Metadata)
-        // We use the user's wallet (in UMI context) as the update authority
+        // Owner wallet retains update authority and full IP rights
+        // Royalties: 5% total split as 4% owner / 1% dev (80/20 of the 5%)
         const result = await createNft(umi, {
           mint,
           name: uniqueName,
-          uri: metadataUri, // Use the provided IPFS metadata URI
-          sellerFeeBasisPoints: percentAmount(5), // 5% royalty
+          uri: metadataUri,
+          sellerFeeBasisPoints: percentAmount(5), // 5% total royalty
           symbol: 'LP-CENT',
-          updateAuthority: fromWeb3JsPublicKey(wallet.publicKey),
+          updateAuthority: fromWeb3JsPublicKey(new PublicKey(OWNER_WALLET)), // Owner controls the NFT
+          creators: [
+            {
+              address: fromWeb3JsPublicKey(new PublicKey(OWNER_WALLET)),
+              verified: false, // Will be verified by owner signing later if needed
+              share: 80, // 80% of 5% = 4% royalty
+            },
+            {
+              address: fromWeb3JsPublicKey(new PublicKey(DEV_WALLET)),
+              verified: false,
+              share: 20, // 20% of 5% = 1% royalty
+            },
+          ],
         }).sendAndConfirm(umi);
 
         // Mint the token to the user
         await mintV1(umi, {
           mint: mint.publicKey,
-          authority: umi.identity, // The user's wallet is the authority
+          authority: umi.identity,
           amount: 1,
-          tokenOwner: umi.identity.publicKey, // Mint to the user's wallet
+          tokenOwner: umi.identity.publicKey,
           tokenStandard: TokenStandard.NonFungible,
         }).sendAndConfirm(umi);
 
         mintAddresses.push(mint.publicKey.toString());
 
-        // Add signature from the mint operation
-        if (result.signature) {
-          // Store signatures if needed, typically we rely on payment sig for the main record
-        }
       } catch (error: any) {
         console.error(`Error minting NFT ${i + 1}:`, error);
         throw new Error(`Failed to mint NFT ${i + 1}: ${error.message}`);
@@ -157,13 +181,12 @@ export async function mintNFT({
 
     return {
       mintAddresses,
-      signatures: signatures, // Contains payment signature
-      paymentSignature // Explicitly return for easier access
+      signatures,
+      paymentSignature
     };
   } catch (error: any) {
     console.error('Error in minting process:', error);
 
-    // Provide more specific error messages
     if (error.message?.includes('insufficient funds') || error.message?.includes('Insufficient')) {
       throw new Error('Insufficient SOL balance. Please ensure you have enough SOL to cover the transaction fees and NFT price.');
     } else if (error.message?.includes('User rejected') || error.message?.includes('rejected')) {
